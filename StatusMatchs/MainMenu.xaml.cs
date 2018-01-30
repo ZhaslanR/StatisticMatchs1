@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using StatusMatchs;
+using System.Net;
+using System.Text.RegularExpressions;
 
 namespace LoginAndRegister
 {
@@ -48,6 +50,22 @@ namespace LoginAndRegister
         private void discusionButton_Click(object sender, RoutedEventArgs e)
         {
             this.Content = new DiscusionPage();
+        }
+
+        private void matchsButton_Click(object sender, RoutedEventArgs e)
+        {
+            WebClient web = new WebClient();
+
+            web.Encoding = Encoding.UTF8;
+            string page = web.DownloadString("https://www.sports.ru/football/");
+            string name = @"href=""https://www.sports.ru/stat/football/52/match/1193596.html"" title=""(.*?)""";
+
+            foreach (Match match in Regex.Matches(page, name))
+            {
+                byte[] toEncodeAsBytes = System.Text.Encoding.UTF8.GetBytes(match.Groups[1].Value);
+                string returnValue = System.Convert.ToBase64String(toEncodeAsBytes);
+                listBox.Items.Add(match.Groups[1].Value);
+            }
         }
     }
 }

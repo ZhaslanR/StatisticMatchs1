@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DiscusionMainWindow.xaml.cs">
+      <DependentUpon>DiscusionMainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DiscusionPage.xaml.cs">
       <DependentUpon>DiscusionPage.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,10 @@
     <Compile Include="SecondWindow.xaml.cs">
       <DependentUpon>SecondWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="DiscusionMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DiscusionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginAndRegister"
         mc:Ignorable="d"
-        Title="MainMenu" Height="500" Width="680">
-    <StackPanel Orientation="Horizontal" Width="auto" VerticalAlignment="Top" Height="50">
-        <Button Content="Жанры" Height="auto"/>
-        <Button x:Name="mainButton" Content="Главное" Height="auto"/>
-        <Button x:Name="newsButton" Content="Новости" Height="auto"/>
-        <Button x:Name="matchsButton" Content="Матчи" Height="auto"/>
-        <Button x:Name="discusionButton" Content="Обсуждение" Height="auto" Click="discusionButton_Click"/>
-        <Button x:Name="signInButton" Content="Войти" Height="auto" Click="signInButton_Click"/>
-        <Button x:Name="signUpButton" Content="Зарегистрироватся" Height="auto"/>
-    </StackPanel>
+        Title="MainMenu" Height="550" Width="740">
+    <Grid Width="730" Height="517" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,1">
+        <Button Content="Жанры" Height="Auto" Margin="0,0,640,463"/>
+        <Button x:Name="mainButton" Content="Главное" Height="Auto" Margin="90,0,551,463"/>
+        <Button x:Name="newsButton" Content="Новости" Height="Auto" Margin="179,0,460,463"/>
+        <Button x:Name="matchsButton" Content="Матчи" Height="Auto" Margin="270,0,377,463" Click="matchsButton_Click"/>
+        <Button x:Name="discusionButton" Content="Обсуждение" Height="Auto" Click="discusionButton_Click" Margin="353,0,257,463"/>
+        <Button x:Name="signInButton" Content="Войти" Height="Auto" Click="signInButton_Click" Margin="473,0,187,463"/>
+        <Button x:Name="signUpButton" Content="Зарегистрироватся" Height="Auto" Margin="543,0,0,463"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="458" VerticalAlignment="Top" Width="730" Margin="0,54,0,0"/>
+    </Grid>
 </Window>
